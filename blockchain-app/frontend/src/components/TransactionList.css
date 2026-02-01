@@ -1,0 +1,277 @@
+/* Transaction List Styles */
+.transaction-list {
+  width: 100%;
+}
+
+/* Table Wrapper */
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.transactions-table thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.transactions-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+.transactions-table tbody tr {
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s ease;
+}
+
+.transactions-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.transactions-table td {
+  padding: 1rem;
+  color: #333;
+}
+
+.id-cell {
+  font-weight: 600;
+  width: 50px;
+}
+
+.address-cell {
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+.address-full {
+  display: block;
+  word-break: break-all;
+}
+
+.address-short {
+  display: none;
+}
+
+.amount-cell {
+  color: #667eea;
+  font-weight: 600;
+  width: 120px;
+}
+
+.date-cell {
+  font-size: 0.9rem;
+  color: #666;
+  min-width: 160px;
+}
+
+.hash-cell {
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+}
+
+.hash-link {
+  color: #667eea;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.hash-link:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+.status-cell {
+  text-align: center;
+  width: 120px;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.status-confirmed {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+/* Loading State */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+}
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-container p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: #999;
+  font-size: 1.1rem;
+}
+
+/* Mobile Cards - Hidden on Desktop */
+.mobile-cards {
+  display: none;
+}
+
+.transaction-card {
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-bottom: 1px solid #eee;
+}
+
+.card-id {
+  font-weight: 600;
+  color: #333;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.card-row:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.card-row label {
+  font-weight: 600;
+  color: #666;
+  min-width: 80px;
+}
+
+.card-row span {
+  flex: 1;
+  text-align: right;
+  color: #333;
+  word-break: break-all;
+}
+
+.amount-value {
+  color: #667eea;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .transactions-table th,
+  .transactions-table td {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .address-full {
+    max-width: 150px;
+    word-break: break-word;
+  }
+
+  .date-cell {
+    min-width: 120px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .table-wrapper {
+    display: none;
+  }
+
+  .mobile-cards {
+    display: block;
+  }
+
+  .address-cell {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .card-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .card-row span {
+    text-align: left;
+  }
+
+  .card-row label {
+    min-width: auto;
+  }
+
+  .amount-value {
+    color: #667eea;
+  }
+}
