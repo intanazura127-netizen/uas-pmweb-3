@@ -1,4 +1,7 @@
 # 🔗 Blockchain Transaction Dashboard
+# NAMA : INTAN AZHURA BAHRAEN
+# NIM : 24111094
+# KELAS : INFORMATIKA C
 
 A full-stack web application for displaying blockchain transactions from smart contracts on the Ethereum Sepolia testnet. Features MetaMask wallet integration, responsive UI, and a RESTful backend API.
 
